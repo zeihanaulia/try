@@ -46,7 +46,7 @@ func submit(writer http.ResponseWriter, request *http.Request, p httprouter.Para
 	fmt.Println(host3)
 
 	rabbitmq.Debug = true
-	conn, err := rabbitmq.DialCluster([]string{host3, host2, host1})
+	conn, err := rabbitmq.DialCluster([]string{host1, host2, host3})
 	if err != nil {
 		log.Fatalf("%s: %s", "Failed to connect to RabbitMQ", err)
 	}
@@ -59,12 +59,12 @@ func submit(writer http.ResponseWriter, request *http.Request, p httprouter.Para
 	defer ch.Close()
 
 	q, err := ch.QueueDeclare(
-		"publisher", // name
-		true,        // durable
-		false,       // delete when unused
-		false,       // exclusive
-		false,       // no-wait
-		nil,         // arguments
+		"hello", // name
+		false,   // durable
+		false,   // delete when unused
+		false,   // exclusive
+		false,   // no-wait
+		nil,     // arguments
 	)
 	if err != nil {
 		log.Fatalf("%s: %s", "Failed to declare a queue", err)

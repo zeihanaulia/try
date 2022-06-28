@@ -59,11 +59,22 @@ docker exec -it rabbitmq-3 rabbitmqctl cluster_status
 
 ## Test application
 
+### Publisher
+
 ```bash
 cd application/publisher
 
 docker build . -t zeihanaulia/rabbitmq-publisher
 docker run -it --rm --net rabbitnet  -e RABBIT_HOST=rabbitmq-1 -e RABBIT_PORT=5672 -e RABBIT_USERNAME=guest -e RABBIT_PASSWORD=guest -p 80:80 zeihanaulia/rabbitmq-publisher
+```
+
+### Receiver
+
+```
+cd application/receiver
+
+docker build . -t zeihanaulia/rabbitmq-receiver
+docker run -it --rm --net rabbitnet  -e RABBIT_HOST=rabbitmq-1 -e RABBIT_PORT=5672 -e RABBIT_USERNAME=guest -e RABBIT_PASSWORD=guest -p 80:80 zeihanaulia/rabbitmq-receiver
 ```
 
 ## Basic Mirroring
