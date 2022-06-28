@@ -1,0 +1,60 @@
+version: "3.2"
+services:
+  rabbitmq-1:
+    image: rabbitmq:3.8-management-alpine
+    container_name: rabbitmq-1
+    hostname: rabbitmq-1
+    volumes:
+      - ./config/rabbitmq-1:/config/
+    environment:
+      - RABBIT_HOST=rabbitmq-1
+      - RABBITMQ_ERLANG_COOKIE=SWBPIUIBKTJGWOURYHCD
+      - RABBITMQ_DEFAULT_USER=myuser
+      - RABBITMQ_DEFAULT_PASS=mypassword
+      - RABBITMQ_CONFIG_FILE=/config/rabbitmq-1
+    ports:
+        - 5672:5672
+        - 15672:15672
+    networks:
+        - rabbitmq_go_net
+
+  rabbitmq-2:
+    image: rabbitmq:3.8-management-alpine
+    container_name: rabbitmq-2
+    hostname: rabbitmq-2
+    volumes:
+      - ./config/rabbitmq-2:/config/
+    environment:
+      - RABBIT_HOST=rabbitmq-2
+      - RABBITMQ_ERLANG_COOKIE=SWBPIUIBKTJGWOURYHCD
+      - RABBITMQ_DEFAULT_USER=myuser
+      - RABBITMQ_DEFAULT_PASS=mypassword
+      - RABBITMQ_CONFIG_FILE=/config/rabbitmq-2
+    ports:
+        - 6672:5672
+        - 16672:15672
+    networks:
+        - rabbitmq_go_net
+
+  rabbitmq-3:
+    image: rabbitmq:3.8-management-alpine
+    container_name: rabbitmq-3
+    hostname: rabbitmq-3
+    volumes:
+      - ./config/rabbitmq-3:/config/
+    environment:
+      - RABBIT_HOST=rabbitmq-3
+      - RABBITMQ_ERLANG_COOKIE=SWBPIUIBKTJGWOURYHCD
+      - RABBITMQ_DEFAULT_USER=myuser
+      - RABBITMQ_DEFAULT_PASS=mypassword
+      - RABBITMQ_CONFIG_FILE=/config/rabbitmq-3
+    ports:
+        - 7672:5672
+        - 17672:15672
+    networks:
+        - rabbitmq_go_net
+
+networks:
+  rabbitmq_go_net:
+    name: rabbitnet
+    driver: bridge

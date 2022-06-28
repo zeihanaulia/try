@@ -1,0 +1,48 @@
+version: "3.2"
+services:
+  rabbitmq-1:
+    image: rabbitmq:3.8-management-alpine
+    container_name: rabbitmq-1
+    hostname: rabbitmq-1
+    environment:
+      - RABBITMQ_ERLANG_COOKIE=SWBPIUIBKTJGWOURYHCD
+      - RABBITMQ_DEFAULT_USER=myuser
+      - RABBITMQ_DEFAULT_PASS=mypassword
+    ports:
+        - 5672:5672
+        - 15672:15672
+    networks:
+        - rabbitmq_go_net
+
+  rabbitmq-2:
+    image: rabbitmq:3.8-management-alpine
+    container_name: rabbitmq-2
+    hostname: rabbitmq-2
+    environment:
+      - RABBITMQ_ERLANG_COOKIE=SWBPIUIBKTJGWOURYHCD
+      # - RABBITMQ_DEFAULT_USER=myuser
+      # - RABBITMQ_DEFAULT_PASS=mypassword
+    ports:
+        - 6672:5672
+        - 16672:15672
+    networks:
+        - rabbitmq_go_net
+
+  rabbitmq-3:
+    image: rabbitmq:3.8-management-alpine
+    container_name: rabbitmq-3
+    hostname: rabbitmq-3
+    environment:
+      - RABBITMQ_ERLANG_COOKIE=SWBPIUIBKTJGWOURYHCD
+      # - RABBITMQ_DEFAULT_USER=myuser
+      # - RABBITMQ_DEFAULT_PASS=mypassword
+    ports:
+        - 7672:5672
+        - 17672:15672
+    networks:
+        - rabbitmq_go_net
+
+networks:
+  rabbitmq_go_net:
+    name: rabbitnet
+    driver: bridge
