@@ -6,9 +6,8 @@ import (
 	"os"
 
 	"github.com/julienschmidt/httprouter"
-	"github.com/sirius1024/go-amqp-reconnect/rabbitmq"
+	amqp "github.com/rabbitmq/amqp091-go"
 	log "github.com/sirupsen/logrus"
-	"github.com/streadway/amqp"
 )
 
 var rabbit_host = os.Getenv("RABBIT_HOST")
@@ -31,22 +30,9 @@ func submit(writer http.ResponseWriter, request *http.Request, p httprouter.Para
 
 	fmt.Println("Received message: " + message)
 
-	// conn, err := amqp.Dial("amqp://" + rabbit_user + ":" + rabbit_password + "@" + rabbit_host + ":" + rabbit_port + "/")
-	// if err != nil {
-	// 	log.Fatalf("%s: %s", "Failed to connect to RabbitMQ", err)
-	// }
-	// defer conn.Close()
-
 	host1 := "amqp://" + rabbit_user + ":" + rabbit_password + "@" + rabbit_host + ":" + rabbit_port + "/"
-	host2 := "amqp://" + rabbit_user + ":" + rabbit_password + "@rabbitmq-2:5672/"
-	host3 := "amqp://" + rabbit_user + ":" + rabbit_password + "@rabbitmq-3:5672/"
 
-	fmt.Println(host1)
-	fmt.Println(host2)
-	fmt.Println(host3)
-
-	rabbitmq.Debug = true
-	conn, err := rabbitmq.DialCluster([]string{host1, host2, host3})
+	conn, err := amqp.Dial(host1)
 	if err != nil {
 		log.Fatalf("%s: %s", "Failed to connect to RabbitMQ", err)
 	}
