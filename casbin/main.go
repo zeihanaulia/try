@@ -99,10 +99,10 @@ m = g(r.sub, p.sub, r.dom) && r.dom == p.dom && r.obj == p.obj && r.act == p.act
 	})
 	fmt.Println("Add Grouping Policies", ok, err)
 
-	sub := "bob" // the user that wants to access a resource.
+	sub := "alice" // the user that wants to access a resource.
 	dom := "oms"
-	obj := "sales-order-return" // the resource that is going to be accessed.
-	act := "approval"           // the operation that the user performs on the resource.
+	obj := "sales-order" // the resource that is going to be accessed.
+	act := "read"        // the operation that the user performs on the resource.
 
 	ok, err = e.Enforce(sub, dom, obj, act)
 	fmt.Println("Enforce", ok, err)

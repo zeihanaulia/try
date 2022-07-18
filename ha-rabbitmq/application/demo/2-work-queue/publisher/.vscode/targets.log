@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jul 13 10:04:08 2022
+# Make data base, printed on Wed Jul 13 16:46:29 2022
 
 # Variables
 
@@ -43,11 +43,15 @@ __HM_ZSH_SESS_VARS_SOURCED = 1
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
 VSCODE_CWD = /mnt/c/Users/Windows/AppData/Local/Programs/Microsoft VS Code
+# environment
+GOPROXY = https://proxy.golang.org,direct
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/zeihanaulia/.vscode-server/bin/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Users/Windows/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Windows/AppData/Local/Programs/Microsoft VS Code/bin:/home/zeihanaulia/.zsh/plugins/zsh-nix-shell:/home/zeihanaulia/go:/home/zeihanaulia/go/bin
+PATH = /usr/local/go/bin:/home/zeihanaulia/.vscode-server/bin/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Users/Windows/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Windows/AppData/Local/Programs/Microsoft VS Code/bin:/home/zeihanaulia/.zsh/plugins/zsh-nix-shell:/home/zeihanaulia/go:/home/zeihanaulia/go/bin
 # environment
 LOCALE_ARCHIVE_2_27 = /nix/store/r4jm7wfirgdr84zmsnq5qy7hvv14c7l7-glibc-locales-2.34-210/lib/locale/locale-archive
 # environment
@@ -57,7 +61,7 @@ GOPATH = /home/zeihanaulia/go
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-3652eddc-7d32-4c86-8031-8671b59f67ab.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-4769b489-0df8-4d26-918b-601f3ba176e6.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -75,7 +79,7 @@ WSL_INTEROP = /run/WSL/17_interop
 # environment
 WT_SESSION = 88671af4-2307-4386-92e9-a674d08daa60
 # environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+GOMODCACHE = /home/zeihanaulia/go/pkg/mod
 # environment
 HOME = /home/zeihanaulia
 # environment
@@ -157,7 +161,7 @@ TERM = xterm-256color
 # environment
 WSL_DISTRO_NAME = Ubuntu
 # variable set hash-table stats:
-# Load=72/1024=7%, Rehash=0, Collisions=4/97=4%
+# Load=74/1024=7%, Rehash=0, Collisions=5/99=5%
 
 # Pattern-specific Variable Values
 
@@ -224,6 +228,6 @@ run:
 # strcache performance: lookups = 22 / hit rate = 27%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=1/22=5%
-# Finished Make data base on Wed Jul 13 10:04:08 2022
+# Finished Make data base on Wed Jul 13 16:46:29 2022
 
  

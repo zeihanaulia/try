@@ -46,16 +46,14 @@ func submit(_ http.ResponseWriter, _ *http.Request, p httprouter.Params) {
 	defer ch.Close()
 
 	q, err := ch.QueueDeclare(
-		"new_hello", // name
-		true,   // durable
-		false,   // delete when unused
-		false,   // exclusive
-		false,   // no-wait
-		nil,     // arguments
+		"task_queue", // name
+		true,         // durable
+		false,        // delete when unused
+		false,        // exclusive
+		false,        // no-wait
+		nil,          // arguments
 	)
-	if err != nil {
-		log.Fatalf("%s: %s", "Failed to declare a queue", err)
-	}
+	failOnError(err, "Failed to declare a queue")
 
 	split := strings.Split(message, " ")
 	body := bodyFrom(split)
